@@ -1,0 +1,19 @@
+{
+  "education": [
+    {
+      "name": "University of Chicago",
+      "href": "https://www.uchicago.edu",
+      "title": "Economics & Computer Science",
+      "logo": "/img/uchicago.png",
+      "start": "2025"
+    },
+    {
+      "name": "Illinois Mathematics and Science Academy",
+      "href": "https://www.imsa.edu",
+      "title": "",
+      "logo": "/img/imsa.png",
+      "start": "2022",
+      "end": "2025"
+    }
+  ]
+}

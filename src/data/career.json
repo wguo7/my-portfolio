@@ -1,0 +1,67 @@
+{
+  "career": [
+    {
+      "name": "XLab",
+      "href": "#",
+      "title": "AI Risk Fellow",
+      "logo": "/img/xlab.png",
+      "start": "2026",
+      "description": [
+        "Researching dual-use AI disclosure risks and building automated LLM evaluation frameworks for policy analysis."
+      ]
+    },
+    {
+      "name": "Quasi AI",
+      "href": "#",
+      "title": "Software Engineering Intern",
+      "logo": "/img/quasi.png",
+      "start": "2025",
+      "description": [
+        "Building physics-informed neural networks in PyTorch for fluid dynamics and quantum simulations."
+      ]
+    },
+    {
+      "name": "Chicago Human+AI Lab",
+      "href": "#",
+      "title": "Undergraduate Researcher",
+      "logo": "/img/chicago+human_ai.png",
+      "start": "2025",
+      "description": [
+        "Researching AI hypothesis generation methods and LLM interpretability."
+      ]
+    },
+    {
+      "name": "Calverton Growth",
+      "href": "#",
+      "title": "Private Equity Intern",
+      "logo": "/img/calverton.png",
+      "start": "2025",
+      "end": "2026",
+      "description": [
+        "Deal sourcing and financial due diligence on manufacturing acquisitions."
+      ]
+    },
+    {
+      "name": "MIT Lincoln Laboratory",
+      "href": "#",
+      "title": "Machine Learning Intern",
+      "logo": "/img/mit_lincoln_lab.png",
+      "start": "2024",
+      "end": "2025",
+      "description": [
+        "Worked on detecting AI-generated text watermarks."
+      ]
+    },
+    {
+      "name": "Northwestern University",
+      "href": "#",
+      "title": "Research Intern",
+      "logo": "/img/northwestern.png",
+      "start": "2023",
+      "end": "2025",
+      "description": [
+        "Built large-scale web scraping tools and applied ML clustering to analyze education data across 600+ schools."
+      ]
+    }
+  ]
+}

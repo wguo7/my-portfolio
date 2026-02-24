@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7.1%;
+    --primary: 0 0% 7.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 7.1%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 37.1%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 7.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 7.1%;
+    --radius: 0.5rem;
+    --chart-1: 0 0% 20%;
+    --chart-2: 0 0% 40%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 80%;
+    --chart-5: 0 0% 90%;
+
+    --sh-identifier: #354150;
+    --sh-keyword: #f47067;
+    --sh-string: #00a99a;
+    --sh-class: #8d85ff;
+    --sh-property: #4e8fdf;
+    --sh-entity: #6eafad;
+    --sh-jsxliterals: #bf7db6;
+    --sh-sign: #8996a3;
+    --sh-comment: #a19595;
+  }
+
+  .dark {
+    --background: 0 0% 7.1%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 11.8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7.1%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 7.1%;
+    --secondary: 0 0% 11.8%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 11.8%;
+    --muted-foreground: 0 0% 62.7%;
+    --accent: 0 0% 11.8%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 16.5%;
+    --input: 0 0% 16.5%;
+    --ring: 0 0% 62.7%;
+    --chart-1: 0 0% 80%;
+    --chart-2: 0 0% 60%;
+    --chart-3: 0 0% 40%;
+    --chart-4: 0 0% 30%;
+    --chart-5: 0 0% 20%;
+
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .title {
+    @apply font-sans text-5xl font-bold tracking-tight decoration-border/75 decoration-2;
+  }
+  .link {
+    @apply text-muted-foreground transition-colors hover:text-foreground;
+  }
+  .prose pre {
+    @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
+  }
+  .prose pre code {
+    @apply p-0 leading-[1.75];
+  }
+  .prose code {
+    @apply rounded-lg px-1 py-0.5;
+  }
+  .prose code span {
+    @apply font-medium;
+  }
+  .input-error {
+    @apply ml-1 mt-2 text-sm text-rose-400;
+  }
+}

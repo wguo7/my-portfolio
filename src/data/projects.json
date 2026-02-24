@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "name": "Caisson AI",
+      "description": "Offline AI assistants for field technicians in oil & gas. No internet? No problem.",
+      "tags": ["Next.js", "Python", "On-device LLMs"],
+      "links": []
+    },
+    {
+      "name": "HypoGeniC vs HypotheSAEs",
+      "description": "Head-to-head comparison of AI hypothesis generation methods across multiple datasets.",
+      "tags": ["Python", "NLP", "Statistical Analysis"],
+      "links": []
+    },
+    {
+      "name": "Kalshi Market Analysis",
+      "description": "Jump detection and event correlation for prediction markets.",
+      "tags": ["Python", "pandas", "Time Series"],
+      "links": []
+    },
+    {
+      "name": "AI Watermark Detection",
+      "description": "Detecting AI-generated text watermarks at MIT Lincoln Laboratory.",
+      "tags": ["ML", "NLP", "Python"],
+      "links": []
+    },
+    {
+      "name": "Braille Learning Device",
+      "description": "Built an assistive device that reached 180 students and won national funding.",
+      "tags": ["Hardware", "Edtech"],
+      "links": []
+    },
+    {
+      "name": "Web Scrapers",
+      "description": "Data collection and ingestion tooling for large-scale research datasets.",
+      "tags": ["Python", "BeautifulSoup", "Selenium"],
+      "links": []
+    }
+  ]
+}

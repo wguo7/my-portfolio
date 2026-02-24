@@ -1,0 +1,19 @@
+{
+  "socials": [
+    {
+      "name": "GitHub",
+      "href": "https://github.com/wguo7",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/in/william-guo-4ab71a263/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Email",
+      "href": "mailto:wguo4@uchicago.edu",
+      "icon": "mail"
+    }
+  ]
+}

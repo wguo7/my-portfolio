@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" rx="12" fill="#1E1E1E"/>
+  <rect x="1" y="1" width="398" height="248" rx="11" fill="none" stroke="#2A2A2A" stroke-width="2"/>
+  <circle cx="200" cy="80" r="35" fill="#2A2A2A"/>
+  <text x="200" y="85" text-anchor="middle" fill="#A0A0A0" font-family="sans-serif" font-size="24" font-weight="bold">WG</text>
+  <text x="200" y="145" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="20" font-weight="bold">Will Guo</text>
+  <text x="200" y="175" text-anchor="middle" fill="#A0A0A0" font-family="sans-serif" font-size="13">CS &amp; Econ @ UChicago</text>
+  <line x1="140" y1="200" x2="260" y2="200" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="200" y="225" text-anchor="middle" fill="#666666" font-family="sans-serif" font-size="10">wguo4@uchicago.edu</text>
+</svg>
