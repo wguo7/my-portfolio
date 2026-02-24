@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Socials from "./Socials";
 
 export default function Footer() {
@@ -8,10 +7,7 @@ export default function Footer() {
         <Socials />
         <section className="mt-8 text-center sm:mt-0 sm:text-left">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Will Guo |{" "}
-            <Link className="link font-bold" href="/privacy">
-              privacy?
-            </Link>
+            &copy; {new Date().getFullYear()} Will Guo
           </p>
         </section>
       </div>

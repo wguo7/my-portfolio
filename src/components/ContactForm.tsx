@@ -145,10 +145,7 @@ export default function ContactForm() {
             </div>
           </Button>
           <p className="mt-4 text-xs text-muted-foreground">
-            By submitting this form, I agree to the{" "}
-            <Link href="/privacy" className="link font-semibold">
-              privacy&nbsp;policy.
-            </Link>
+            By submitting this form, I agree to be contacted via email.
           </p>
         </div>
       </form>
