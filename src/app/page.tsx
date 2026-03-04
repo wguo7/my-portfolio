@@ -61,7 +61,7 @@ export default async function Home() {
 
       <Experience />
 
-      <section className="flex flex-col gap-8">
+      <section className="relative z-10 flex flex-col gap-8">
         <div className="flex justify-between">
           <h2 className="title text-2xl sm:text-3xl">featured projects</h2>
           <LinkWithIcon
@@ -74,7 +74,7 @@ export default async function Home() {
         <Projects limit={LIMIT} />
       </section>
 
-      <section className="flex flex-col gap-8">
+      <section className="relative z-10 flex flex-col gap-8">
         <div className="flex justify-between">
           <h2 className="title text-3xl">recent posts</h2>
           <LinkWithIcon
