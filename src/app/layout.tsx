@@ -65,7 +65,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <div className="mx-auto flex max-w-3xl flex-col px-8">
+          <div className="relative z-10 mx-auto flex max-w-3xl flex-col px-8">
             <main className="grow">{children}</main>
           </div>
           <Footer />
