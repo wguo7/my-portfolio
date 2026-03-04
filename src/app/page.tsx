@@ -4,11 +4,9 @@ import LinkWithIcon from "@/components/LinkWithIcon";
 import Posts from "@/components/Posts";
 import Projects from "@/components/Projects";
 import Socials from "@/components/Socials";
-import { Button } from "@/components/ui/Button";
 import { getPosts } from "@/lib/posts";
-import { ArrowRightIcon, FileDown } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import path from "path";
 
 const blogDirectory = path.join(process.cwd(), "content");
@@ -35,12 +33,6 @@ export default async function Home() {
           <p className="mt-2 text-sm text-muted-foreground">Chicago, IL</p>
 
           <section className="mt-6 flex flex-wrap items-center gap-4">
-            <Link href="/resume.pdf" target="_blank">
-              <Button variant="outline">
-                <span className="font-semibold">Resume</span>
-                <FileDown className="ml-2 size-5" />
-              </Button>
-            </Link>
             <Socials />
           </section>
         </div>
