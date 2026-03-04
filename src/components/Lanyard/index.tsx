@@ -16,7 +16,7 @@ export default function LanyardOverlay({
 }: LanyardOverlayProps) {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 hidden md:block">
-      <div className="pointer-events-auto h-full w-full">
+      <div className="pointer-events-none h-full w-full">
         <Suspense fallback={null}>
           <Lanyard
             cardTextureFront={cardTextureFront}
