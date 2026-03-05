@@ -1,39 +1,97 @@
 {
   "projects": [
     {
+      "name": "AI Watermark Detection",
+      "description": "Detecting AI-generated text watermarks at MIT Lincoln Laboratory.",
+      "tags": ["ML", "NLP", "Python"],
+      "links": [
+        {
+          "name": "Paper",
+          "href": "https://arxiv.org/pdf/2511.13722",
+          "icon": "file-text"
+        },
+        {
+          "name": "ICDM Poster",
+          "href": "/poster-watermarking.pdf",
+          "icon": "image"
+        }
+      ]
+    },
+    {
+      "name": "HypoGeniC vs HypotheSAEs",
+      "description": "Head-to-head comparison of AI hypothesis generation methods across multiple datasets.",
+      "tags": ["Python", "NLP", "Statistical Analysis"],
+      "links": [
+        {
+          "name": "HypoBench Leaderboard",
+          "href": "https://chicagohai.github.io/HypoBench/leaderboard_real/",
+          "icon": "link"
+        }
+      ]
+    },
+    {
+      "name": "AI Adversarial Attack Demo",
+      "description": "Interactive platform demonstrating adversarial text attack techniques for security research and AI robustness testing.",
+      "tags": ["Next.js", "NLP", "Security"],
+      "links": [
+        {
+          "name": "Demo",
+          "href": "https://ai-attack-demo.vercel.app/",
+          "icon": "external-link"
+        }
+      ]
+    },
+    {
+      "name": "Kalshi Market Analysis",
+      "description": "Jump detection and event correlation for prediction markets.",
+      "tags": ["Python", "pandas", "Time Series"],
+      "links": [
+        {
+          "name": "GitHub",
+          "href": "https://github.com/PrashanthBhaskara/KalshiApprovalDetection",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "name": "Web Scrapers",
+      "description": "Data collection and ingestion tooling for large-scale research datasets.",
+      "tags": ["Python", "BeautifulSoup", "Selenium"],
+      "links": [
+        {
+          "name": "CPS FOIA Scraper",
+          "href": "https://github.com/wguo7/CPS-FOIA-Scraper",
+          "icon": "github"
+        },
+        {
+          "name": "RCP Scraper",
+          "href": "https://github.com/wguo7/RCP-Average-Scraper/tree/main",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "name": "CPS Data Analysis",
+      "description": "Northwestern research on Chicago Public Schools data to identify inequalities in education outcomes.",
+      "tags": ["Python", "Data Science", "Research"],
+      "links": [
+        {
+          "name": "Research Poster",
+          "href": "/poster-cps.pdf",
+          "icon": "image"
+        }
+      ]
+    },
+    {
       "name": "Caisson AI",
       "description": "Offline AI assistants for field technicians in oil & gas. No internet? No problem.",
       "tags": ["Next.js", "Python", "On-device LLMs"],
       "links": []
     },
     {
-      "name": "HypoGeniC vs HypotheSAEs",
-      "description": "Head-to-head comparison of AI hypothesis generation methods across multiple datasets.",
-      "tags": ["Python", "NLP", "Statistical Analysis"],
-      "links": []
-    },
-    {
-      "name": "Kalshi Market Analysis",
-      "description": "Jump detection and event correlation for prediction markets.",
-      "tags": ["Python", "pandas", "Time Series"],
-      "links": []
-    },
-    {
-      "name": "AI Watermark Detection",
-      "description": "Detecting AI-generated text watermarks at MIT Lincoln Laboratory.",
-      "tags": ["ML", "NLP", "Python"],
-      "links": []
-    },
-    {
       "name": "Braille Learning Device",
       "description": "Built an assistive device that reached 180 students and won national funding.",
       "tags": ["Hardware", "Edtech"],
-      "links": []
-    },
-    {
-      "name": "Web Scrapers",
-      "description": "Data collection and ingestion tooling for large-scale research datasets.",
-      "tags": ["Python", "BeautifulSoup", "Selenium"],
       "links": []
     }
   ]

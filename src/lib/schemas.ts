@@ -15,7 +15,7 @@ export const ContactFormSchema = z.object({
 
 const iconLink = z.object({
   name: z.string(),
-  href: z.string().url(),
+  href: z.union([z.string().url(), z.string().regex(/^\//)]),
   icon: z.custom<keyof typeof dynamicIconImports>(),
 });
 export type IconLink = z.infer<typeof iconLink>;
