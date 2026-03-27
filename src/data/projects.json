@@ -42,6 +42,18 @@
       ]
     },
     {
+      "name": "Samsara Equity Research",
+      "description": "Buy-rated equity research report on Samsara (NYSE: IOT), featuring DCF and comps valuation, independent FMCSA-based TAM analysis, and primary research with 40+ fleet operators.",
+      "tags": ["Finance", "Equity Research", "Valuation"],
+      "links": [
+        {
+          "name": "Report",
+          "href": "/samsara-report.pdf",
+          "icon": "file-text"
+        }
+      ]
+    },
+    {
       "name": "Kalshi Market Analysis",
       "description": "Jump detection and event correlation for prediction markets.",
       "tags": ["Python", "pandas", "Time Series"],
