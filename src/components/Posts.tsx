@@ -23,7 +23,8 @@ export default function Posts({ posts }: Props) {
             return (
               <li key={post.slug} className="group">
                 <Link href={`/blog/${post.slug}`} className="block">
-                  <article className="p-6 transition-colors hover:bg-muted/30">
+                  <article className="relative overflow-hidden p-6 transition-all duration-300 hover:bg-muted/30 hover:shadow-md hover:shadow-primary/5">
+                    <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       {/* Content Section */}
                       <div className="min-w-0 flex-1">

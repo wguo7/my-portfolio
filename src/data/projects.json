@@ -4,6 +4,7 @@
       "name": "AI Watermark Detection",
       "description": "Detecting AI-generated text watermarks at MIT Lincoln Laboratory.",
       "tags": ["ML", "NLP", "Python"],
+      "image": "/img/previews/watermarking.png",
       "links": [
         {
           "name": "Paper",
@@ -30,13 +31,15 @@
       ]
     },
     {
-      "name": "AI Adversarial Attack Demo",
-      "description": "Interactive platform demonstrating adversarial text attack techniques for security research and AI robustness testing.",
-      "tags": ["Next.js", "NLP", "Security"],
+      "name": "Caisson AI",
+      "description": "Offline AI assistants for field technicians in oil & gas. No internet? No problem.",
+      "tags": ["Next.js", "Python", "On-device LLMs"],
+      "href": "https://caisson-mvp-mu.vercel.app/",
+      "image": "/img/previews/caisson.png",
       "links": [
         {
-          "name": "Demo",
-          "href": "https://ai-attack-demo.vercel.app/",
+          "name": "Live Demo",
+          "href": "https://caisson-mvp-mu.vercel.app/",
           "icon": "external-link"
         }
       ]
@@ -45,11 +48,25 @@
       "name": "Samsara Equity Research",
       "description": "Buy-rated equity research report on Samsara (NYSE: IOT), featuring DCF and comps valuation, independent FMCSA-based TAM analysis, and primary research with 40+ fleet operators.",
       "tags": ["Finance", "Equity Research", "Valuation"],
+      "image": "/img/previews/samsara.png",
       "links": [
         {
           "name": "Report",
           "href": "/samsara-report.pdf",
           "icon": "file-text"
+        }
+      ]
+    },
+    {
+      "name": "AI Adversarial Attack Demo",
+      "description": "Interactive platform demonstrating adversarial text attack techniques for security research and AI robustness testing.",
+      "tags": ["Next.js", "NLP", "Security"],
+      "image": "/img/previews/ai-attack.png",
+      "links": [
+        {
+          "name": "Demo",
+          "href": "https://ai-attack-demo.vercel.app/",
+          "icon": "external-link"
         }
       ]
     },
@@ -86,24 +103,12 @@
       "name": "CPS Data Analysis",
       "description": "Northwestern research on Chicago Public Schools data to identify inequalities in education outcomes.",
       "tags": ["Python", "Data Science", "Research"],
+      "image": "/img/previews/cps.png",
       "links": [
         {
           "name": "Research Poster",
           "href": "/poster-cps.pdf",
           "icon": "image"
-        }
-      ]
-    },
-    {
-      "name": "Caisson AI",
-      "description": "Offline AI assistants for field technicians in oil & gas. No internet? No problem.",
-      "tags": ["Next.js", "Python", "On-device LLMs"],
-      "href": "https://caisson-mvp-mu.vercel.app/",
-      "links": [
-        {
-          "name": "Live Demo",
-          "href": "https://caisson-mvp-mu.vercel.app/",
-          "icon": "external-link"
         }
       ]
     },

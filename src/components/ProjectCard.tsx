@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/Card";
 import { Project } from "@/lib/schemas";
 import Image from "next/image";
-import Link from "next/link";
 import Markdown from "react-markdown";
 import Icon from "./Icon";
 
@@ -22,28 +21,27 @@ export function ProjectCard({ project }: Props) {
   const { name, href, description, image, tags, links } = project;
 
   return (
-    <Card className="group relative flex flex-col overflow-hidden transition-all duration-300 hover:border-foreground/20 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5">
-        <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
-        <CardHeader>
-          {image && (
-            <Link href={href || image}>
-              <Image
-                src={image}
-                alt={name}
-                width={500}
-                height={300}
-                className="h-40 w-full object-cover object-top"
-              />
-            </Link>
-          )}
+    <Card className="group relative flex flex-col overflow-hidden">
+        {image && (
+          <div className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-10">
+            <Image
+              src={image}
+              alt=""
+              fill
+              className="object-cover object-top blur-[2px]"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
+          </div>
+        )}
+        <CardHeader className="relative z-10">
         </CardHeader>
-        <CardContent className="flex flex-col gap-2">
+        <CardContent className="relative z-10 flex flex-col gap-2">
           <CardTitle>{name}</CardTitle>
           <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
             {description}
           </Markdown>
         </CardContent>
-        <CardFooter className="flex h-full flex-col items-start justify-between gap-4">
+        <CardFooter className="relative z-10 flex h-full flex-col items-start justify-between gap-4">
           {tags && tags.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-1">
               {tags.toSorted().map((tag) => (
