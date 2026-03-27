@@ -98,7 +98,14 @@
       "name": "Caisson AI",
       "description": "Offline AI assistants for field technicians in oil & gas. No internet? No problem.",
       "tags": ["Next.js", "Python", "On-device LLMs"],
-      "links": []
+      "href": "https://caisson-mvp-mu.vercel.app/",
+      "links": [
+        {
+          "name": "Live Demo",
+          "href": "https://caisson-mvp-mu.vercel.app/",
+          "icon": "external-link"
+        }
+      ]
     },
     {
       "name": "Braille Learning Device",
