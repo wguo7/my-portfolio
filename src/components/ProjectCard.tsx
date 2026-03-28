@@ -20,8 +20,8 @@ interface Props {
 export function ProjectCard({ project }: Props) {
   const { name, href, description, image, tags, links } = project;
 
-  return (
-    <Card className="group relative flex flex-col overflow-hidden">
+  const cardContent = (
+    <Card className={`group relative flex flex-col overflow-hidden${href ? " transition-all duration-300 hover:border-foreground/40 hover:shadow-lg hover:shadow-foreground/5" : ""}`}>
         {image && (
           <div className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-10">
             <Image
@@ -76,4 +76,14 @@ export function ProjectCard({ project }: Props) {
         </CardFooter>
     </Card>
   );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {cardContent}
+      </a>
+    );
+  }
+
+  return cardContent;
 }

@@ -22,6 +22,7 @@
       "name": "HypoGeniC vs HypotheSAEs",
       "description": "Head-to-head comparison of AI hypothesis generation methods across multiple datasets.",
       "tags": ["Python", "NLP", "Statistical Analysis"],
+      "href": "https://chicagohai.github.io/HypoBench/leaderboard_real/",
       "links": [
         {
           "name": "HypoBench Leaderboard",
