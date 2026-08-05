@@ -1,40 +1,9 @@
 {
   "projects": [
     {
-      "name": "AI Watermark Detection",
-      "description": "Detecting AI-generated text watermarks at MIT Lincoln Laboratory.",
-      "tags": ["ML", "NLP", "Python"],
-      "image": "/img/previews/watermarking.png",
-      "links": [
-        {
-          "name": "Paper",
-          "href": "https://arxiv.org/pdf/2511.13722",
-          "icon": "file-text"
-        },
-        {
-          "name": "ICDM Poster",
-          "href": "/poster-watermarking.pdf",
-          "icon": "image"
-        }
-      ]
-    },
-    {
-      "name": "HypoGeniC vs HypotheSAEs",
-      "description": "Head-to-head comparison of AI hypothesis generation methods across multiple datasets.",
-      "tags": ["Python", "NLP", "Statistical Analysis"],
-      "href": "https://chicagohai.github.io/HypoBench/leaderboard_real/",
-      "links": [
-        {
-          "name": "HypoBench Leaderboard",
-          "href": "https://chicagohai.github.io/HypoBench/leaderboard_real/",
-          "icon": "link"
-        }
-      ]
-    },
-    {
       "name": "Caisson AI",
-      "description": "Offline AI assistants for field technicians in oil & gas. No internet? No problem.",
-      "tags": ["Next.js", "Python", "On-device LLMs"],
+      "description": "Offline-first RAG over equipment manuals for field technicians — ~92% retrieval accuracy with fully on-device search, in paid pilots.",
+      "tags": ["RAG", "Next.js", "FastAPI"],
       "href": "https://caisson-mvp-mu.vercel.app/",
       "image": "/img/previews/caisson.png",
       "links": [
@@ -46,9 +15,52 @@
       ]
     },
     {
+      "name": "Deferred-Execution Attacks",
+      "description": "Defined a new attack class where LLM agents schedule harmful actions to fire after session monitoring ends — then built a trigger-graph monitor that closed the detection gap from 0/4 to 4/4. 1st place at Uncommon Hacks 2026.",
+      "tags": ["LLM Agents", "AI Security", "ControlArena"],
+      "image": "/img/previews/deferred.png",
+      "links": [
+        {
+          "name": "Devpost",
+          "href": "https://devpost.com/software/deferred-execution-attacks-against-ai-control-monitors",
+          "icon": "external-link"
+        },
+        {
+          "name": "Writeup",
+          "href": "https://drive.google.com/file/d/1Oe84O8BFKEOk1QtkGLkB3GPdqbWWUxrd/view",
+          "icon": "file-text"
+        }
+      ]
+    },
+    {
+      "name": "HypoGeniC vs HypotheSAEs",
+      "description": "Head-to-head comparison of AI hypothesis generation methods across multiple datasets for the Chicago Human+AI Lab.",
+      "tags": ["Python", "NLP", "Statistical Analysis"],
+      "href": "https://chicagohai.github.io/HypoBench/leaderboard_real/",
+      "links": [
+        {
+          "name": "HypoBench Leaderboard",
+          "href": "https://chicagohai.github.io/HypoBench/leaderboard_real/",
+          "icon": "link"
+        }
+      ]
+    },
+    {
+      "name": "Prediction Market Microstructure",
+      "description": "Analyzed 74M+ Kalshi trades with a difference-in-differences design to measure how the 2025 sports launch reshaped spreads and price discovery.",
+      "tags": ["Python", "pandas", "Econometrics"],
+      "links": [
+        {
+          "name": "GitHub",
+          "href": "https://github.com/PrashanthBhaskara/KalshiApprovalDetection",
+          "icon": "github"
+        }
+      ]
+    },
+    {
       "name": "Samsara Equity Research",
-      "description": "Buy-rated equity research report on Samsara (NYSE: IOT), featuring DCF and comps valuation, independent FMCSA-based TAM analysis, and primary research with 40+ fleet operators.",
-      "tags": ["Finance", "Equity Research", "Valuation"],
+      "description": "Buy-rated equity research report on Samsara (NYSE: IOT) — DCF and comps valuation, independent FMCSA-based TAM analysis, and primary research with 40+ fleet operators.",
+      "tags": ["Finance", "Valuation"],
       "image": "/img/previews/samsara.png",
       "links": [
         {
@@ -60,7 +72,7 @@
     },
     {
       "name": "AI Adversarial Attack Demo",
-      "description": "Interactive platform demonstrating adversarial text attack techniques for security research and AI robustness testing.",
+      "description": "Interactive platform demonstrating adversarial text attacks for security research and AI robustness testing.",
       "tags": ["Next.js", "NLP", "Security"],
       "image": "/img/previews/ai-attack.png",
       "links": [
@@ -72,38 +84,9 @@
       ]
     },
     {
-      "name": "Kalshi Market Analysis",
-      "description": "Jump detection and event correlation for prediction markets.",
-      "tags": ["Python", "pandas", "Time Series"],
-      "links": [
-        {
-          "name": "GitHub",
-          "href": "https://github.com/PrashanthBhaskara/KalshiApprovalDetection",
-          "icon": "github"
-        }
-      ]
-    },
-    {
-      "name": "Web Scrapers",
-      "description": "Data collection and ingestion tooling for large-scale research datasets.",
-      "tags": ["Python", "BeautifulSoup", "Selenium"],
-      "links": [
-        {
-          "name": "CPS FOIA Scraper",
-          "href": "https://github.com/wguo7/CPS-FOIA-Scraper",
-          "icon": "github"
-        },
-        {
-          "name": "RCP Scraper",
-          "href": "https://github.com/wguo7/RCP-Average-Scraper/tree/main",
-          "icon": "github"
-        }
-      ]
-    },
-    {
       "name": "CPS Data Analysis",
       "description": "Northwestern research on Chicago Public Schools data to identify inequalities in education outcomes.",
-      "tags": ["Python", "Data Science", "Research"],
+      "tags": ["Python", "Data Science"],
       "image": "/img/previews/cps.png",
       "links": [
         {
@@ -115,7 +98,7 @@
     },
     {
       "name": "Braille Learning Device",
-      "description": "Built an assistive device that reached 180 students and won national funding.",
+      "description": "Assistive hardware for learning braille that reached 180 students and won national funding.",
       "tags": ["Hardware", "Edtech"],
       "links": []
     }

@@ -48,6 +48,7 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        highlight: "hsl(var(--highlight))",
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",
@@ -59,6 +60,7 @@ const config: Config = {
       fontFamily: {
         sans: "var(--font-sans)",
         heading: "var(--font-heading)",
+        mono: "var(--font-mono)",
       },
       keyframes: {
         "accordion-down": {

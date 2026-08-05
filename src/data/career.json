@@ -2,37 +2,44 @@
   "career": [
     {
       "name": "XLab",
-      "href": "#",
+      "href": "https://xlab.uchicago.edu",
       "title": "AI Risk Fellow",
       "logo": "/img/xlab.png",
       "start": "2026",
       "description": [
-        "Researching dual-use AI disclosure risks and building automated LLM evaluation frameworks for policy analysis."
+        "Selected from 300+ applicants for a funded fellowship in AI agent security; red-teaming control protocols for LLM agents with evaluations built on ControlArena."
+      ]
+    },
+    {
+      "name": "Caisson AI",
+      "href": "https://caisson-mvp-mu.vercel.app/",
+      "title": "Founder",
+      "start": "2026",
+      "description": [
+        "Offline-first RAG assistant over equipment manuals for field technicians — ~92% retrieval accuracy, in paid pilots with elevator and heavy-equipment firms."
       ]
     },
     {
       "name": "Quasi AI",
-      "href": "#",
       "title": "Software Engineering Intern",
       "logo": "/img/quasi.png",
       "start": "2025",
       "description": [
-        "Building physics-informed neural networks in PyTorch for fluid dynamics and quantum simulations."
+        "Productionized distributed simulation services; implemented PyTorch DDP multi-GPU training for a 2.3x speedup and 18% error reduction."
       ]
     },
     {
       "name": "Chicago Human+AI Lab",
-      "href": "#",
+      "href": "https://chicagohai.github.io",
       "title": "Undergraduate Researcher",
       "logo": "/img/chicago+human_ai.png",
       "start": "2025",
       "description": [
-        "Researching AI hypothesis generation methods and LLM interpretability."
+        "Prototyping multi-agent LLM pipelines that automate hypothesis generation, ranking, and evaluation over research literature."
       ]
     },
     {
       "name": "Calverton Growth",
-      "href": "#",
       "title": "Private Equity Intern",
       "logo": "/img/calverton.png",
       "start": "2025",
@@ -43,18 +50,18 @@
     },
     {
       "name": "MIT Lincoln Laboratory",
-      "href": "#",
-      "title": "Machine Learning Intern",
+      "href": "https://www.ll.mit.edu",
+      "title": "Machine Learning Research Intern",
       "logo": "/img/mit_lincoln_lab.png",
       "start": "2024",
-      "end": "2025",
+      "end": "2026",
       "description": [
-        "Worked on detecting AI-generated text watermarks."
+        "First-authored the IEEE ICDM Best Paper on LLM watermark detection — 89% detection accuracy across 3 encoding schemes; cut the research pipeline's full-run compute from 48 to 6 hours."
       ]
     },
     {
       "name": "Northwestern University",
-      "href": "#",
+      "href": "https://www.northwestern.edu",
       "title": "Research Intern",
       "logo": "/img/northwestern.png",
       "start": "2023",

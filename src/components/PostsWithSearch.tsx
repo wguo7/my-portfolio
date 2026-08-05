@@ -24,7 +24,8 @@ export default function PostsWithSearch({ posts }: Props) {
       <div className="flex items-center gap-3">
         <Input
           type="text"
-          placeholder="Search something..."
+          placeholder="Search posts..."
+          aria-label="Search posts"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

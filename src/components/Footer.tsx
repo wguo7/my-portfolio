@@ -2,14 +2,12 @@ import Socials from "./Socials";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 w-full pt-12">
-      <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-8 pb-32 sm:flex-row-reverse sm:justify-between">
+    <footer className="relative z-10 w-full border-t border-border/60 pt-10">
+      <div className="mx-auto flex max-w-3xl flex-col items-center justify-center gap-6 px-8 pb-16 sm:flex-row-reverse sm:justify-between">
         <Socials />
-        <section className="mt-8 text-center sm:mt-0 sm:text-left">
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Will Guo
-          </p>
-        </section>
+        <p className="font-mono text-xs text-muted-foreground">
+          &copy; {new Date().getFullYear()} will guo &middot; chicago, il
+        </p>
       </div>
     </footer>
   );

@@ -4,26 +4,27 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 7.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7.1%;
-    --primary: 0 0% 7.1%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 7.1%;
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 37.1%;
-    --accent: 0 0% 95%;
-    --accent-foreground: 0 0% 7.1%;
+    --background: 60 8% 98%;
+    --foreground: 60 3% 6%;
+    --card: 60 8% 98%;
+    --card-foreground: 60 3% 6%;
+    --popover: 60 8% 98%;
+    --popover-foreground: 60 3% 6%;
+    --primary: 60 3% 6%;
+    --primary-foreground: 60 8% 98%;
+    --secondary: 50 9% 95%;
+    --secondary-foreground: 60 3% 6%;
+    --muted: 50 9% 95%;
+    --muted-foreground: 50 3% 42%;
+    --accent: 50 9% 93%;
+    --accent-foreground: 60 3% 6%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 0 0% 7.1%;
+    --border: 40 9% 89%;
+    --input: 40 9% 86%;
+    --ring: 50 3% 42%;
     --radius: 0.5rem;
+    --highlight: 50 3% 42%;
     --chart-1: 0 0% 20%;
     --chart-2: 0 0% 40%;
     --chart-3: 0 0% 60%;
@@ -42,25 +43,26 @@
   }
 
   .dark {
-    --background: 0 0% 7.1%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 11.8%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 7.1%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 7.1%;
-    --secondary: 0 0% 11.8%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 11.8%;
-    --muted-foreground: 0 0% 62.7%;
-    --accent: 0 0% 11.8%;
-    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 4%;
+    --foreground: 60 2% 93%;
+    --card: 60 2% 6%;
+    --card-foreground: 60 2% 93%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 60 2% 93%;
+    --primary: 60 2% 93%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 60 1% 9%;
+    --secondary-foreground: 60 2% 93%;
+    --muted: 60 1% 9%;
+    --muted-foreground: 55 2% 55%;
+    --accent: 60 1% 11%;
+    --accent-foreground: 60 2% 93%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 16.5%;
-    --input: 0 0% 16.5%;
-    --ring: 0 0% 62.7%;
+    --border: 0 0% 14%;
+    --input: 0 0% 16%;
+    --ring: 55 2% 55%;
+    --highlight: 55 2% 55%;
     --chart-1: 0 0% 80%;
     --chart-2: 0 0% 60%;
     --chart-3: 0 0% 40%;
@@ -78,14 +80,29 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01";
+  }
+  ::selection {
+    background: hsl(var(--foreground) / 0.15);
   }
   .title {
-    @apply font-sans text-5xl font-bold tracking-tight decoration-border/75 decoration-2;
+    @apply font-sans font-bold tracking-tight;
   }
   .link {
-    @apply text-muted-foreground transition-colors hover:text-foreground;
+    @apply text-muted-foreground transition-colors duration-150 hover:text-foreground;
+  }
+  /* Mono uppercase section label — the site's structural voice */
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground;
+  }
+  /* Inline prose link: hairline underline that strengthens on hover */
+  .fancy-link {
+    @apply font-medium text-foreground underline decoration-border decoration-[1.5px] underline-offset-4 transition-colors duration-150 hover:decoration-foreground;
   }
   .prose pre {
     @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
@@ -101,5 +118,23 @@
   }
   .input-error {
     @apply ml-1 mt-2 text-sm text-rose-400;
+  }
+}
+
+@layer components {
+  /* Film grain — tactile texture over the whole page (pre-rendered PNG tile:
+     cheaper than an SVG feTurbulence filter, which some browsers re-rasterize) */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image: url("/img/grain.png");
+    background-repeat: repeat;
+  }
+  .dark .grain::before {
+    opacity: 0.35;
   }
 }

@@ -1,82 +1,148 @@
 import Experience from "@/components/Experience";
-import LanyardOverlay from "@/components/Lanyard";
 import LinkWithIcon from "@/components/LinkWithIcon";
+import ParticlePortrait from "@/components/ParticlePortrait";
 import Posts from "@/components/Posts";
 import Projects from "@/components/Projects";
+import Publications from "@/components/Publications";
+import Reveal from "@/components/Reveal";
 import Socials from "@/components/Socials";
 import { getPosts } from "@/lib/posts";
 import { ArrowRightIcon } from "lucide-react";
-import Image from "next/image";
 import path from "path";
 
 const blogDirectory = path.join(process.cwd(), "content");
-const LIMIT = 2; // max show 2
+const POST_LIMIT = 2;
+const PROJECT_LIMIT = 2;
 
 export default async function Home() {
-  const posts = await getPosts(blogDirectory, LIMIT);
+  const posts = await getPosts(blogDirectory, POST_LIMIT);
 
   return (
-    <article className="mt-8 flex flex-col gap-16 pb-16">
-      <section className="relative flex flex-col items-start gap-8">
-        <div className="relative z-20 flex max-w-[640px] flex-col rounded-2xl bg-background/35 p-4 pr-[300px] backdrop-blur-sm md:pr-[320px]">
-          <h1 className="title whitespace-nowrap text-4xl sm:text-5xl">
-            hey, i&apos;m will. 👋
-          </h1>
+    <article className="flex flex-col gap-20 pb-16">
+      <section className="grid min-h-[calc(100svh-14rem)] grid-cols-1 content-center items-center gap-10 py-10 md:grid-cols-[1fr_300px] lg:-mx-16 lg:grid-cols-[1fr_380px] lg:gap-14">
+        <Reveal mode="load">
+          <h1 className="title text-4xl sm:text-5xl">hey, i&apos;m will.</h1>
 
-          <p className="mt-4 max-w-[38ch] text-balance text-sm sm:text-base">
-            AI Risk Fellow at XLab and researcher at the Chicago Human+AI Lab.
-            Previously, I worked on AI watermark detection at MIT Lincoln
-            Laboratory and built large-scale education data tooling at
-            Northwestern.
+          <p className="mt-5 max-w-[52ch] text-pretty leading-relaxed">
+            I study math &amp; CS at the{" "}
+            <a
+              href="https://www.uchicago.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fancy-link"
+            >
+              University of Chicago
+            </a>{" "}
+            (&apos;29). I first-authored the{" "}
+            <a
+              href="https://arxiv.org/abs/2511.13722"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fancy-link"
+            >
+              IEEE ICDM Best Paper
+            </a>{" "}
+            on LLM watermark detection at MIT Lincoln Laboratory, and I&apos;m
+            building{" "}
+            <a
+              href="https://caisson-mvp-mu.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fancy-link"
+            >
+              Caisson AI
+            </a>{" "}
+            — offline AI assistants for field technicians.
           </p>
 
-          <p className="mt-2 text-sm text-muted-foreground">Chicago, IL</p>
+          <p className="mt-4 font-mono text-xs text-muted-foreground">
+            now — AI Risk Fellow @ XLab
+          </p>
 
-          <section className="mt-6 flex flex-wrap items-center gap-4">
+          <div className="mt-7 flex flex-wrap items-center gap-6">
             <Socials />
-          </section>
-        </div>
+            <span className="font-mono text-xs text-muted-foreground">
+              chicago, il
+            </span>
+          </div>
+        </Reveal>
 
-        <Image
-          src="/img/avatar.png"
-          alt="Will Guo"
-          width={260}
-          height={260}
-          className="absolute right-0 top-10 z-20 hidden h-[260px] w-[260px] rounded-2xl border border-border object-cover md:block"
-        />
-
-        <LanyardOverlay
-          cardTextureFront="/img/lanyard-card-front.png"
-          cardTextureBack="/img/lanyard-card-back.png"
-        />
+        <Reveal mode="load" delay={0.15} className="mx-auto w-full max-w-[380px]">
+          <ParticlePortrait />
+        </Reveal>
       </section>
 
-      <Experience />
-
-      <section className="relative z-10 flex flex-col gap-8">
-        <div className="flex justify-between">
-          <h2 className="title text-2xl sm:text-3xl">featured projects</h2>
-          <LinkWithIcon
-            href="/projects"
-            position="right"
-            icon={<ArrowRightIcon className="size-5" />}
-            text="view more"
-          />
-        </div>
-        <Projects limit={LIMIT} />
+      <section className="flex flex-col gap-5">
+        <Reveal>
+          <h2 className="section-label">research</h2>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <Publications />
+        </Reveal>
       </section>
 
-      <section className="relative z-10 flex flex-col gap-8">
-        <div className="flex justify-between">
-          <h2 className="title text-3xl">recent posts</h2>
-          <LinkWithIcon
-            href="/blog"
-            position="right"
-            icon={<ArrowRightIcon className="size-5" />}
-            text="view more"
-          />
-        </div>
-        <Posts posts={posts} />
+      <section className="flex flex-col gap-5">
+        <Reveal>
+          <h2 className="section-label">experience</h2>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <Experience />
+        </Reveal>
+      </section>
+
+      <section className="flex flex-col gap-5">
+        <Reveal>
+          <div className="flex items-baseline justify-between">
+            <h2 className="section-label">selected projects</h2>
+            <LinkWithIcon
+              href="/projects"
+              position="right"
+              icon={<ArrowRightIcon className="size-4" />}
+              text="view all"
+            />
+          </div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <Projects limit={PROJECT_LIMIT} />
+        </Reveal>
+      </section>
+
+      {posts.length > 0 && (
+        <section className="flex flex-col gap-5">
+          <Reveal>
+            <div className="flex items-baseline justify-between">
+              <h2 className="section-label">writing</h2>
+              <LinkWithIcon
+                href="/blog"
+                position="right"
+                icon={<ArrowRightIcon className="size-4" />}
+                text="view all"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <Posts posts={posts} />
+          </Reveal>
+        </section>
+      )}
+
+      <section className="flex flex-col gap-5">
+        <Reveal>
+          <h2 className="section-label">contact</h2>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <p className="max-w-[52ch] text-pretty leading-relaxed">
+            The fastest way to reach me is email —{" "}
+            <a href="mailto:wguo4@uchicago.edu" className="fancy-link">
+              wguo4@uchicago.edu
+            </a>
+            . For anything longer, there&apos;s a{" "}
+            <a href="/contact" className="fancy-link">
+              form
+            </a>
+            .
+          </p>
+        </Reveal>
       </section>
     </article>
   );

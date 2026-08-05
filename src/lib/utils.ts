@@ -21,7 +21,7 @@ export function calculateReadingTime(content: string): string {
     .replace(/```[\s\S]*?```/g, '') // Remove code blocks
     .replace(/`[^`]*`/g, '') // Remove inline code
     .replace(/!\[.*?\]\(.*?\)/g, '') // Remove images
-    .replace(/\[.*?\]\(.*?\)/g, '$1') // Remove links, keep text
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // Remove links, keep text
     .replace(/<[^>]*>/g, '') // Remove HTML tags
     .replace(/#{1,6}\s/g, '') // Remove heading markers
     .replace(/[*_~]/g, '') // Remove emphasis markers

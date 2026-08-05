@@ -1,6 +1,6 @@
 # my-portfolio
 
-Personal portfolio website for Will Guo — built with Next.js, Tailwind CSS, and TypeScript.
+Personal portfolio website for Will Guo — built with Next.js, Tailwind CSS, and TypeScript. Originally based on [Ted Ang's portfolio template](https://github.com/tedawf/tedawf.com), since heavily reworked.
 
 ## Running locally
 

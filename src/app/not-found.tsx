@@ -9,7 +9,7 @@ export default function NotFound() {
           <section className="sm:flex">
             <p className="title text-muted-foreground">404</p>
             <div className="sm:ml-6">
-              <div className="sm:border-l sm:border-gray-200 sm:pl-6">
+              <div className="sm:border-l sm:border-border sm:pl-6">
                 <h1 className="title sm:text-5xl">
                   page not found.
                 </h1>

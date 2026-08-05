@@ -12,28 +12,41 @@ export default function TimelineItem({ experience }: Props) {
   const { name, href, title, logo, start, end, description, links } =
     experience;
 
+  const hasLink = href && href !== "#";
+
+  const avatar = (
+    <Avatar className="size-12 border border-border">
+      <AvatarImage
+        src={logo}
+        alt={name}
+        className="bg-background object-contain"
+      />
+      <AvatarFallback className="font-mono text-sm">{name[0]}</AvatarFallback>
+    </Avatar>
+  );
+
   return (
     <li className="relative ml-10 py-4">
-      <Link
-        href={href}
-        target="_blank"
-        className="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white"
-      >
-        <Avatar className="size-12 border">
-          <AvatarImage
-            src={logo}
-            alt={name}
-            className="bg-background object-contain"
-          />
-          <AvatarFallback>{name[0]}</AvatarFallback>
-        </Avatar>
-      </Link>
+      {hasLink ? (
+        <Link
+          href={href!}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-background transition-transform duration-150 hover:scale-105"
+        >
+          {avatar}
+        </Link>
+      ) : (
+        <div className="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-background">
+          {avatar}
+        </div>
+      )}
       <div className="flex flex-1 flex-col justify-start gap-1">
         {start && (
-          <time className="text-xs text-muted-foreground">
+          <time className="font-mono text-xs text-muted-foreground">
             <span>{start}</span>
-            <span>{" - "}</span>
-            <span>{end ? end : "Present"}</span>
+            <span>{" — "}</span>
+            <span>{end ? end : "present"}</span>
           </time>
         )}
         <h2 className="font-semibold leading-none">{name}</h2>
@@ -51,8 +64,8 @@ export default function TimelineItem({ experience }: Props) {
       {links && links.length > 0 && (
         <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
           {links?.map((link, idx) => (
-            <Link href={link.href} key={idx}>
-              <Badge key={idx} title={link.name} className="flex gap-2">
+            <Link href={link.href} key={idx} target="_blank">
+              <Badge title={link.name} className="flex gap-2">
                 <Icon name={link.icon} aria-hidden="true" className="size-3" />
                 {link.name}
               </Badge>

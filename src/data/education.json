@@ -3,9 +3,13 @@
     {
       "name": "University of Chicago",
       "href": "https://www.uchicago.edu",
-      "title": "Economics & Computer Science",
+      "title": "B.S. Mathematics & Computer Science",
       "logo": "/img/uchicago.png",
-      "start": "2025"
+      "start": "2025",
+      "end": "2029",
+      "description": [
+        "Derivatives Quant Trading Group, ICPC, AI in Finance Cohort."
+      ]
     },
     {
       "name": "Illinois Mathematics and Science Academy",

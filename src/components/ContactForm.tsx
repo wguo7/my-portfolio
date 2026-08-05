@@ -83,52 +83,74 @@ export default function ContactForm() {
           name="website"
           tabIndex={-1}
           autoComplete="off"
+          aria-hidden="true"
           className="pointer-events-none absolute -left-[9999px] opacity-0"
         />
 
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {/* Name */}
           <div className="h-16">
+            <label htmlFor="name" className="sr-only">
+              Name
+            </label>
             <Input
               id="name"
               type="text"
               placeholder="Name"
               autoComplete="given-name"
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? "name-error" : undefined}
               {...register("name")}
             />
 
             {errors.name?.message && (
-              <p className="input-error">{errors.name.message}</p>
+              <p id="name-error" className="input-error">
+                {errors.name.message}
+              </p>
             )}
           </div>
 
           {/* Email */}
           <div className="h-16">
+            <label htmlFor="email" className="sr-only">
+              Email
+            </label>
             <Input
               id="email"
               type="email"
               placeholder="Email"
               autoComplete="email"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "email-error" : undefined}
               {...register("email")}
             />
 
             {errors.email?.message && (
-              <p className="input-error">{errors.email.message}</p>
+              <p id="email-error" className="input-error">
+                {errors.email.message}
+              </p>
             )}
           </div>
 
           {/* Message */}
           <div className="h-32 sm:col-span-2">
+            <label htmlFor="message" className="sr-only">
+              Message
+            </label>
             <Textarea
+              id="message"
               rows={4}
-              placeholder="Leave feedback about the site, career opportunities or just to say hello etc."
-              autoComplete="Message"
+              placeholder="Research, internships, Caisson, or just to say hello."
               className="resize-none"
+              aria-invalid={!!errors.message}
+              aria-describedby={errors.message ? "message-error" : undefined}
               {...register("message")}
             />
 
             {errors.message?.message && (
-              <p className="input-error">{errors.message.message}</p>
+              <p id="message-error" className="input-error">
+                {errors.message.message}
+              </p>
             )}
           </div>
         </div>
