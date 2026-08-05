@@ -32,8 +32,26 @@ export default async function Home() {
               className="fancy-link"
             >
               University of Chicago
+            </a>
+            . I&apos;m an AI Risk Fellow at{" "}
+            <a
+              href="https://xlab.uchicago.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fancy-link"
+            >
+              XLab
             </a>{" "}
-            (&apos;29). I first-authored the{" "}
+            and I&apos;m building{" "}
+            <a
+              href="https://caisson-mvp-mu.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fancy-link"
+            >
+              Caisson AI
+            </a>
+            , offline AI assistants for field technicians. I first-authored the{" "}
             <a
               href="https://arxiv.org/abs/2511.13722"
               target="_blank"
@@ -42,21 +60,7 @@ export default async function Home() {
             >
               IEEE ICDM Best Paper
             </a>{" "}
-            on LLM watermark detection at MIT Lincoln Laboratory, and I&apos;m
-            building{" "}
-            <a
-              href="https://caisson-mvp-mu.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fancy-link"
-            >
-              Caisson AI
-            </a>{" "}
-            — offline AI assistants for field technicians.
-          </p>
-
-          <p className="mt-4 font-mono text-xs text-muted-foreground">
-            now — AI Risk Fellow @ XLab
+            on LLM watermark detection.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-6">
@@ -132,7 +136,7 @@ export default async function Home() {
         </Reveal>
         <Reveal delay={0.05}>
           <p className="max-w-[52ch] text-pretty leading-relaxed">
-            The fastest way to reach me is email —{" "}
+            The fastest way to reach me is email:{" "}
             <a href="mailto:wguo4@uchicago.edu" className="fancy-link">
               wguo4@uchicago.edu
             </a>

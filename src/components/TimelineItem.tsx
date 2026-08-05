@@ -45,7 +45,7 @@ export default function TimelineItem({ experience }: Props) {
         {start && (
           <time className="font-mono text-xs text-muted-foreground">
             <span>{start}</span>
-            <span>{" — "}</span>
+            <span>{" – "}</span>
             <span>{end ? end : "present"}</span>
           </time>
         )}

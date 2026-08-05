@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Caisson AI",
-      "description": "Offline-first RAG over equipment manuals for field technicians — ~92% retrieval accuracy with fully on-device search, in paid pilots.",
+      "description": "Offline-first RAG over equipment manuals for field technicians: ~92% retrieval accuracy with fully on-device search, in paid pilots.",
       "tags": ["RAG", "Next.js", "FastAPI"],
       "href": "https://caisson-mvp-mu.vercel.app/",
       "image": "/img/previews/caisson.png",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Deferred-Execution Attacks",
-      "description": "Defined a new attack class where LLM agents schedule harmful actions to fire after session monitoring ends — then built a trigger-graph monitor that closed the detection gap from 0/4 to 4/4. 1st place at Uncommon Hacks 2026.",
+      "description": "Defined a new attack class where LLM agents schedule harmful actions to fire after session monitoring ends, then built a trigger-graph monitor that closed the detection gap from 0/4 to 4/4. 1st place at Uncommon Hacks 2026.",
       "tags": ["LLM Agents", "AI Security", "ControlArena"],
       "image": "/img/previews/deferred.png",
       "links": [
@@ -59,7 +59,7 @@
     },
     {
       "name": "Samsara Equity Research",
-      "description": "Buy-rated equity research report on Samsara (NYSE: IOT) — DCF and comps valuation, independent FMCSA-based TAM analysis, and primary research with 40+ fleet operators.",
+      "description": "Buy-rated equity research report on Samsara (NYSE: IOT). DCF and comps valuation, independent FMCSA-based TAM analysis, and primary research with 40+ fleet operators.",
       "tags": ["Finance", "Valuation"],
       "image": "/img/previews/samsara.png",
       "links": [

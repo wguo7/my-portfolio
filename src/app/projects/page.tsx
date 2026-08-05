@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected projects by Will Guo — Caisson AI, LLM agent security, prediction market microstructure, and more.",
+    "Selected projects by Will Guo: Caisson AI, LLM agent security, prediction market microstructure, and more.",
 };
 
 export default function ProjectPage() {

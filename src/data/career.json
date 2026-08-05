@@ -16,7 +16,7 @@
       "title": "Founder",
       "start": "2026",
       "description": [
-        "Offline-first RAG assistant over equipment manuals for field technicians — ~92% retrieval accuracy, in paid pilots with elevator and heavy-equipment firms."
+        "Offline-first RAG assistant over equipment manuals for field technicians: ~92% retrieval accuracy, in paid pilots with elevator and heavy-equipment firms."
       ]
     },
     {
@@ -56,7 +56,7 @@
       "start": "2024",
       "end": "2026",
       "description": [
-        "First-authored the IEEE ICDM Best Paper on LLM watermark detection — 89% detection accuracy across 3 encoding schemes; cut the research pipeline's full-run compute from 48 to 6 hours."
+        "First-authored the IEEE ICDM Best Paper on LLM watermark detection: 89% detection accuracy across 3 encoding schemes; cut the research pipeline's full-run compute from 48 to 6 hours."
       ]
     },
     {

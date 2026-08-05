@@ -20,7 +20,7 @@ export default async function BlogPage() {
       {posts.length > 0 ? (
         <PostsWithSearch posts={posts} />
       ) : (
-        <p className="text-muted-foreground">Nothing here yet — soon.</p>
+        <p className="text-muted-foreground">Nothing here yet. Soon.</p>
       )}
     </article>
   );

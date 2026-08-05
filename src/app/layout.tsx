@@ -45,12 +45,12 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Will Guo — Math & CS @ UChicago",
-    template: "%s — Will Guo",
+    default: "Will Guo | Math & CS @ UChicago",
+    template: "%s | Will Guo",
   },
   description: DESCRIPTION,
   openGraph: {
-    title: "Will Guo — Math & CS @ UChicago",
+    title: "Will Guo | Math & CS @ UChicago",
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: "Will Guo",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Will Guo — Math & CS @ UChicago",
+    title: "Will Guo | Math & CS @ UChicago",
     description: DESCRIPTION,
     images: ["/og.png"],
   },
