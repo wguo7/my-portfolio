@@ -1,0 +1,85 @@
+---
+title: "When Prediction Markets Became Sportsbooks"
+publishedAt: "2026-08-05"
+summary: "Kalshi launched sports betting in January 2025. Using ~593 million trades, I measure what happened to everything else on the platform: retail flow into non-sports markets tilted hard toward longshots, and the price of that tilt roughly doubled."
+author: "Will Guo"
+tags: ["research", "prediction markets", "economics", "market microstructure"]
+---
+
+In January 2025, Kalshi — the CFTC-regulated exchange best known for election and economic forecasting markets — officially launched sports markets. Within two months, sports were more than half of all contracts traded on the platform; by late 2025 they peaked above 90%. A site built for "will the Fed cut rates?" became, by volume, a sportsbook.
+
+This post asks a narrower question than "is that good or bad": **did the arrival of a sports-betting user base change how Kalshi's *non-sports* markets trade?** Sports bettors didn't sign up to trade CPI contracts, but they can — the wallet works everywhere on the platform. If sports-style behavior (backing longshots, chasing lottery-like payoffs) spills over into event markets, it should show up in exactly measurable places: who takes which side of the book, at which prices, and what those trades subsequently return.
+
+It does show up. Three findings, in order of confidence:
+
+1. **Retail flow into non-sports markets tilted sharply toward longshot "YES" bets.** Among contracts priced 1–20 cents (implied probability under 20%), the share of aggressive (taker) flow buying YES rose from 52.1% before the launch to 65.7% after — a 13.6 percentage-point shift (Holm-adjusted p ≈ 10⁻⁶ across the full 12-test family).
+2. **The favorite-longshot bias collapsed.** Longshot takers went from losing about 2.5 cents per dollar staked (weekly average) to losing about 42 cents. On markets that resolve within 60 days — the cleanest comparison — longshot takers actually *earned* +8.3% before the launch and lost −21.6% after.
+3. **The dollar cost to retail is suggestive but not statistically settled.** Naïve accounting says takers lost ~$13.0M more than pre-launch loss rates would predict. But with honest (market-clustered) inference, that estimate has wide uncertainty (p ≈ 0.27). I report it as accounting, not as a test.
+
+## The data
+
+This analysis uses what is, to my knowledge, the largest public dataset of prediction-market activity: the complete Kalshi trade tape from mid-2021, plus full market metadata, collected via [an open-source indexing framework](https://github.com/Jon-Becker/prediction-market-analysis). The refresh for this post brought the totals to **~593 million Kalshi trades across ~30 million markets**, through August 4, 2026.
+
+Two collection notes that matter (and one that should interest anyone doing research on this platform):
+
+- **Kalshi's API deletes trade history older than ~72 days.** I verified this directly: a market with millions of trades returns data for late May 2026 and nothing before May 25. If you want Kalshi history, you must collect it continuously — the platform forgets.
+- Because of that purge, the tape is consistently collected through May 1, 2026, has a 23-day gap, and is complete again from May 25 onward — but by then Kalshi had exploded into minute-scale crypto markets trading ~8M times *per day*. The two eras aren't comparable, so **all statistical tests use the consistently-collected sample ending May 1, 2026** (with market resolutions as of August 2026), and the post-gap era is reported separately below.
+- All results restrict to markets with at least 100 contracts of lifetime volume, matching the historical collection rule, and non-sports/sports classification uses a curated ticker-prefix taxonomy (not keyword matching, which misfiles things like UKRAINE under "RAIN").
+
+## The natural experiment
+
+The treatment date is **January 23, 2025** — Kalshi's official sports launch. The first sports market actually appeared in October 2024, but volume was negligible until the official launch: sports crossed 25% of platform volume in mid-March 2025 and 50% a week later.
+
+![Kalshi sports weekly volume, cumulative share, and sports share of total platform volume, 2024-2026](/img/blog/kalshi/sports-ramp.png)
+
+A design choice worth being explicit about: the pre-period *includes* the 2024 US election, the highest-volume, most retail-heavy stretch in prediction-market history before the launch. For the returns results this is conservative — election weeks pull pre-period retail losses *up*, shrinking the measured post-launch deterioration. Restricting the pre-period to just the election year makes the composition shift *larger* (+16.8pp) and the returns collapse somewhat smaller but still large (−28.8pp, p = 0.003). Both variants are reported in the repo, not asserted.
+
+## Finding 1: The composition shift
+
+Take every non-sports trade where the YES contract is priced 1–20 cents. Someone aggressed on that trade — hit the bid or lifted the offer. Before the sports launch, that aggressor bought the cheap YES side 52.1% of the time; after, 65.7%.
+
+![Longshot YES-taker share around the sports launch, and taker excess returns by entry price bucket, pre vs post](/img/blog/kalshi/composition-and-flb.png)
+
+The shift is not a one-category story: politics markets moved +8.2pp, financial/economic markets +9.9pp, everything else +5.9pp (all Holm-significant). And it's not just the 1–20c bucket — the whole relationship between price and YES-taking steepened, meaning flow tilted toward cheap contracts across the price spectrum.
+
+Two robustness results sharpen the interpretation:
+
+- **Same markets, or different markets?** Within markets that traded on both sides of the launch (with market fixed effects, a market-age control, and market-clustered standard errors), the intensive-margin estimate is a fairly precise zero (−1.2pp, p = 0.53). The aggregate shift is an *extensive-margin* phenomenon: it comes from the changing mix of markets and the flow arriving into new markets, not from veteran markets' flow deteriorating in place. That's consistent with the mechanism being new *users* and new *market types* rather than a repricing of existing ones.
+- **Short-horizon markets show it cleanly.** Restricting to markets that resolve within 60 days of creation (which strips out slow-resolving election-style markets and any settlement-censoring artifacts), the composition shift is +8.0pp (p ≈ 10⁻⁵).
+
+## Finding 2: The favorite-longshot bias collapsed
+
+The favorite-longshot bias (FLB) is one of the oldest facts in betting markets: people systematically overpay for low-probability outcomes. A striking pre-launch fact about Kalshi was how *mild* its FLB was — in the 60-day-resolution sample, longshot takers actually earned a small positive excess return (+8.3%) before 2025. Kalshi's pre-launch users were, on this dimension, notably rational.
+
+That's gone:
+
+- Weekly equal-weighted excess returns on 1–20c taker positions: **−2.5% pre → −42.2% post** (Holm p ≈ 6×10⁻⁵).
+- Pooled dollar-weighted (which lets high-volume weeks dominate — the fairer welfare number): **−37.8% pre → −47.6% post**.
+- Duration-restricted (60-day) sample: **+8.3% pre → −21.6% post** (Holm p ≈ 10⁻⁶) — the sign of the bias flipped.
+- The result survives restricting the post-period to after September 2025, when sports had become ~74% of platform volume (HAC p = 0.003, block-bootstrap p = 0.028).
+
+I'll be direct about the caveats, because they're real. There are significant pre-trends: longshot YES-share was already drifting up through 2024, largely the election ramp — this is visible in the event study and reported, not hidden. The placebo test in 2023 (no launch, stable period) shows nothing, and the composition shift survives excluding the largest markets. But a skeptic who wants to attribute some of the effect to a post-election user-base hangover rather than sports cross-over has a coherent story for part of the magnitude; the 12-month-pre and post-2025-09 robustness runs bound how much.
+
+One alternative explanation deserves its own mention: maybe cheap YES contracts became *worth* buying less, rather than buyers becoming less price-sensitive. But that would show up as makers' returns improving symmetrically — and the maker-taker return gap widened in lockstep with the taker deterioration, which is what a demand-side (who's trading) story predicts, not a news-arrival story.
+
+## Finding 3: What it cost — an accounting, not a theorem
+
+Apply pre-launch per-price-bucket loss rates to post-launch dollar volumes, and takers "should have" lost about $12.7M in non-sports markets after January 2025. They actually lost ~$25.7M — an excess of **~$13.0M**, of which $5.4M sits in the 1–20c longshot bucket (and, interestingly, $16.2M comes from the 61–80c bucket, where takers used to *make* money and now roughly break even — retail's edge on favorites evaporated too).
+
+![Taker loss per dollar wagered by entry price bucket pre vs post, and cumulative taker dollar losses on non-sports markets](/img/blog/kalshi/retail-losses.png)
+
+Earlier drafts of this analysis reported this with p < 10⁻⁶, using a test that treated every dollar as an independent observation. That's wrong — dollars within a market settle together — and with a market-clustered bootstrap the excess is not statistically distinguishable from zero (p ≈ 0.27), because aggregate dollar losses are dominated by a handful of huge markets. The composition and returns results above are the statistically solid findings; the dollar figure is the plausible magnitude they imply.
+
+## The 2026 platform, briefly
+
+The post-gap data (May 25 – August 4, 2026) describes a platform transformed again: Kalshi now clears ~8M trades a day, roughly half of them in non-sports markets dominated by minute- and 15-minute crypto price ladders; esports alone is ~23% of contract volume. In this new regime the longshot YES-taker share in non-sports markets is **72.9%** — higher than anything in the estimation sample. Collection-methodology differences mean I won't lean on comparisons across the boundary, but nothing in the new era suggests the pattern is reverting.
+
+## What I take from this
+
+Prediction markets' core value proposition is that prices aggregate information. That case is strongest when the marginal trader is someone with a view on the event. What these results document is a platform whose marginal retail trader increasingly behaves like a lottery-ticket buyer across *all* markets — and pays for it. The efficiency case for prediction markets doesn't die from this (makers and arbitrageurs still discipline prices), but the *welfare* story for retail participants got measurably worse at exactly the moment the platform found product-market fit.
+
+Everything here is reproducible: [code, data pipeline, and all 60 test results](https://github.com/Jon-Becker/prediction-market-analysis) — including the tests that didn't survive, which is how it should be.
+
+---
+
+*Methodology notes: treatment date 2025-01-23; all headline tests Newey-West HAC (lag 4) on weekly series or market-clustered inference, with Holm-Bonferroni correction across the 12-test family; excess return = (payout − entry price) / entry price, dollar-weighted, following Buergi, Deng & Whelan (2025); taker side identified from the aggressor flag on each trade. Fees are not modeled; including them would make retail outcomes worse. This is an observational design around a platform-level event — causal language should be read with the pre-trend caveats above.*
