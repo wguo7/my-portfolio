@@ -51,16 +51,17 @@ export default async function Home() {
             >
               Caisson AI
             </a>
-            , offline AI assistants for field technicians. I first-authored the{" "}
+            , offline AI assistants for field technicians. Previously, I
+            researched LLM watermark detection at{" "}
             <a
-              href="https://arxiv.org/abs/2511.13722"
+              href="https://www.ll.mit.edu"
               target="_blank"
               rel="noopener noreferrer"
               className="fancy-link"
             >
-              IEEE ICDM Best Paper
-            </a>{" "}
-            on LLM watermark detection.
+              MIT Lincoln Laboratory
+            </a>
+            .
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-6">
