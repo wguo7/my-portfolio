@@ -30,10 +30,10 @@ export default function ParticlePortrait() {
   return (
     <div className="relative aspect-square w-full">
       {mode === "canvas" ? (
-        // canvas bleeds past the layout slot so scattered points fly free;
-        // horizontal bleed stays smaller than the hero grid gap so the box
-        // never overlaps the intro text
-        <div className="pointer-events-none absolute -inset-y-[24%] -inset-x-[8%] [&_canvas]:!pointer-events-auto">
+        // canvas bleeds past the layout slot so scattered points fly free
+        // (the hero grid reserves a gutter wider than this bleed, so the
+        // canvas never reaches the intro text)
+        <div className="pointer-events-none absolute -inset-[24%] [&_canvas]:!pointer-events-auto">
           <Portrait />
         </div>
       ) : mode === "static" ? (

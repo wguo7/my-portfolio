@@ -19,7 +19,7 @@ export default async function Home() {
 
   return (
     <article className="flex flex-col gap-20 pb-16">
-      <section className="grid min-h-[calc(100svh-14rem)] grid-cols-1 content-center items-center gap-10 py-10 md:grid-cols-[1fr_300px] lg:-mx-16 lg:grid-cols-[1fr_380px] lg:gap-14">
+      <section className="grid min-h-[calc(100svh-14rem)] grid-cols-1 content-center items-center gap-10 py-10 md:grid-cols-[1fr_300px] md:gap-x-24 lg:-mx-16 lg:grid-cols-[1fr_380px] lg:gap-x-32">
         <Reveal mode="load">
           <h1 className="title text-4xl sm:text-5xl">hey, i&apos;m will.</h1>
 
