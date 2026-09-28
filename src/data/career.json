@@ -1,13 +1,13 @@
 {
   "career": [
     {
-      "name": "XLab",
-      "href": "https://xlab.uchicago.edu",
-      "title": "AI Risk Fellow",
+      "name": "UChicago XLab",
+      "href": "https://xrisk.uchicago.edu/",
+      "title": "AI Security Research Fellow",
       "logo": "/img/xlab.png",
       "start": "2026",
       "description": [
-        "Selected from 300+ applicants for a funded fellowship in AI agent security; red-teaming control protocols for LLM agents with evaluations built on ControlArena."
+        "Selected from 300+ applicants for a funded fellowship in AI agent security; built an LLM red-team agent that evaded provenance-based intrusion detection on 85 of 100 tasks."
       ]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Founder",
       "start": "2026",
       "description": [
-        "Offline-first RAG assistant over equipment manuals for field technicians: ~92% retrieval accuracy, in paid pilots with elevator and heavy-equipment firms."
+        "Offline-first RAG assistant over equipment manuals for field technicians: 95% retrieval accuracy, $50K across 3 paid pilots with elevator and heavy-equipment firms."
       ]
     },
     {
@@ -25,7 +25,7 @@
       "logo": "/img/quasi.png",
       "start": "2025",
       "description": [
-        "Productionized distributed simulation services; implemented PyTorch DDP multi-GPU training for a 2.3x speedup and 18% error reduction."
+        "Built distributed simulation services with checkpointing and auto-retries (job success 88% to 99%); PyTorch DDP training cut runs from 40 to 17 hours at equal accuracy."
       ]
     },
     {
@@ -56,7 +56,7 @@
       "start": "2024",
       "end": "2026",
       "description": [
-        "First-authored the IEEE ICDM Best Paper on LLM watermark detection: 89% detection accuracy across 3 encoding schemes; cut the research pipeline's full-run compute from 48 to 6 hours."
+        "First-authored the IEEE ICDM Best Paper on LLM watermark detection: benchmarked 4 schemes across 10K+ prompts and showed back-translation drops KGW detection AUC from 0.95 to 0.52; cut full-run compute from 48 to 6 hours."
       ]
     },
     {

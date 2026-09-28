@@ -33,9 +33,9 @@ export default async function Home() {
             >
               University of Chicago
             </a>
-            . I&apos;m an AI Risk Fellow at{" "}
+            . I&apos;m an AI Security Research Fellow at{" "}
             <a
-              href="https://xlab.uchicago.edu"
+              href="https://xrisk.uchicago.edu/"
               target="_blank"
               rel="noopener noreferrer"
               className="fancy-link"

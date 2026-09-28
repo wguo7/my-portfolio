@@ -40,7 +40,7 @@ const mono = JetBrains_Mono({
 
 const SITE_URL = "https://www.williamguo.xyz";
 const DESCRIPTION =
-  "Math & CS at UChicago. AI Risk Fellow at XLab and builder of Caisson AI. Previously researched LLM watermark detection at MIT Lincoln Laboratory.";
+  "Math & CS at UChicago. AI Security Research Fellow at UChicago XLab and builder of Caisson AI. Previously researched LLM watermark detection at MIT Lincoln Laboratory.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
