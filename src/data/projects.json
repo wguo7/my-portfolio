@@ -47,7 +47,7 @@
     },
     {
       "name": "Prediction Market Microstructure",
-      "description": "Studied 593M Kalshi trades: after the 2025 sports launch, the longshot share of taker order flow in non-sports markets rose from 52% to 66% and longshot returns flipped from +8.3% to −21.6%.",
+      "description": "Studied 593M Kalshi trades: after the 2025 sports launch, the longshot share of taker order flow in non-sports markets rose from 52% to 66%, and weekly longshot returns on short-dated markets fell from +8.3% to −21.6%.",
       "tags": ["Python", "pandas", "Econometrics"],
       "links": [
         {
