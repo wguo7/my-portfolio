@@ -56,7 +56,7 @@
       "start": "2024",
       "end": "2026",
       "description": [
-        "First-authored the IEEE ICDM Best Paper on LLM watermark detection: benchmarked 4 schemes across 10K+ prompts and showed back-translation drops KGW detection AUC from 0.95 to 0.52; cut full-run compute from 48 to 6 hours."
+        "First-authored an IEEE ICDM 2025 Rising Star Award paper on LLM watermark detection: benchmarked 4 schemes across 10K+ prompts and showed back-translation drops KGW detection AUC from 0.95 to 0.52; cut full-run compute from 48 to 6 hours."
       ]
     },
     {

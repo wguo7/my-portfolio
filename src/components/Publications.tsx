@@ -5,7 +5,7 @@ const paper = {
     "Signature vs. Substance: Evaluating the Balance of Adversarial Resistance and Linguistic Quality in Watermarking Large Language Models",
   authors: ["William Guo", "Adaku Uchendu", "Ana Smith"],
   venue: "IEEE International Conference on Data Mining (ICDM) 2025",
-  award: "Best Paper Award",
+  award: "Rising Star Award",
   summary:
     "How well do LLM watermarks survive paraphrase and back-translation attacks, and what do they cost in linguistic quality? A systematic evaluation across watermarking schemes, from work at MIT Lincoln Laboratory.",
   links: [
