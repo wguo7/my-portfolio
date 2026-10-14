@@ -18,7 +18,11 @@ export type PostMetadata = {
   author?: string;
   tags?: string[];
   readingTime?: string;
+  draft?: boolean;
 };
+
+// Drafts show up in `next dev` only, never in a production build.
+const showDrafts = process.env.NODE_ENV !== "production";
 
 export async function getPostBySlug(
   rootDirectory: string,
@@ -28,6 +32,7 @@ export async function getPostBySlug(
     const filePath = path.join(rootDirectory, `${slug}.mdx`);
     const fileContents = await fs.readFileSync(filePath, { encoding: "utf-8" });
     const { data, content } = matter(fileContents);
+    if (data.draft && !showDrafts) return null;
 
     const metadata: PostMetadata = {
       ...data,
@@ -53,6 +58,7 @@ export async function getPosts(
       .filter((file) => file.endsWith(".mdx")) // Filter out .DS_Store and other files
       .map((file) => getPostMetaData(rootDirectory, file))
       .filter((post): post is PostMetadata => post !== null) // Filter out failed reads
+      .filter((post) => showDrafts || !post.draft)
       .sort((a, b) => {
         const dateA =
           new Date(a.updatedAt ?? a.publishedAt ?? "").getTime() || 0;
