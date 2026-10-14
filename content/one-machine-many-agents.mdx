@@ -1,0 +1,37 @@
+---
+title: "What Broke When I Ran Thirteen Claude Code Sessions on One Always-On Machine"
+publishedAt: "2026-10-14"
+summary: "Long-running agent sessions failed where they acted on a state they could not see: an account balance, an approval, another session's progress, or their own compacted context. Here is each failure and the change that fixed it."
+author: "Will Guo"
+tags: ["agents", "workflow", "claude code"]
+---
+
+An AI agent left to run overnight can lose a day of results, spend money nobody approved, or act on a plan it no longer remembers, and its owner finds out in the morning. Claude Code, Anthropic's coding agent, makes it easy to leave many sessions running at once in a terminal multiplexer and to answer any of them from a phone. However, when I ran one session for each of my thirteen projects, the failures came in places no single session could see: GPU pods deleted with their disks when a balance reached zero, an approval that went to the wrong session, and plans lost when a session's context was compacted. In short, each failure came from a session acting on a state it could not observe: an account balance, my approval, another session's progress, or its own earlier context. After each failure I changed the setup so that the missing state is written down or read live, and the session checks it before it acts. The fixes date from September 18 to October 12, 2026, so this post reports what broke and what changed, not a measured improvement.
+
+## The setup
+
+Until October 11 the sessions ran on my laptop; over October 11 and 12 I moved all thirteen projects onto a Mac mini that never sleeps. Each project has one Claude Code session in its own tmux window, and tmux keeps every window alive when I disconnect. An hourly job restarts any session that has exited and resumes its last conversation. The laptop and my phone are only screens: from the laptop I connect over SSH, and from the phone I use Remote Control, a Claude Code feature that lets me read and type into a running session from the Claude app. One session oversees the others. It can list and message them, and at 08:00 and 20:00 it sends me a digest of everything waiting on me.
+
+## A zero balance deletes the pod and its disk
+
+Research runs that need a GPU go to pods rented from Runpod. Each time my balance there reached zero, every pod on the account was deleted, not stopped. My pods kept their results on the pod's own disk rather than on a network volume, the separate storage that outlives a pod, so a deletion was also data loss. For example, on September 18 four research pods were billing $8.36 per hour when the balance ran out, and about 18 pod-hours of results that had not been copied off were deleted with them. On September 23 a single unattended pod went the same way, with the results of two experiment configurations. The third time, on September 27, the account had been funded with about $30, the billing figures lagged real spending by about an hour, and the pod was deleted about ten minutes after the session asked me for a top-up.
+
+The billing API reports spending but not the balance, so a session cannot see how close it is to zero. Therefore, I now read the balance from the billing page myself and write it into a file the sessions read. Before a session starts a pod, it writes down the hourly price, the expected total, and the hours left until the balance reaches zero, and it does not start a run that would end with less than about three hours of margin. Every job also copies its results off the pod after each phase and records the numbers in its README as they arrive, so a deletion costs compute rather than conclusions. This fix still depends on me reading the balance; a session that trusts an old number can run out exactly as before.
+
+## Approvals do not travel between sessions
+
+Some actions wait for my typed yes, such as sending an email or deleting a pod. On October 12 I typed a yes on my phone to the overseeing session, which passed it to the session that would act. That session refused, because Claude Code does not treat a message from another session as approval from the user. I think that is the right design: otherwise any session could approve anything on behalf of any other.
+
+Now every session on the Mac starts with Remote Control on, so I can open the acting session on my phone and type the yes there. A session that needs approval names itself in its request, so I know which one to open. The cost is one extra step for me on every approval, and I have not found a way to remove it that I would trust.
+
+## Status does not travel between sessions either
+
+The overseeing session once told me a batch of emails was still unsent more than ten minutes after another session had sent them. It was reporting what it had been told, not what that session showed. A script now reads every session's screen, its transcript, and the requests it has left for me, every two minutes. It takes 0.4 seconds and makes no model calls, and the overseeing session must run it before telling me anything about another session. It reports what each session shows at that moment, not whether that session is right.
+
+## Context compaction and NOW.md
+
+A Claude Code session has a fixed context window. When the context nears a threshold, set by the environment variable CLAUDE_CODE_AUTO_COMPACT_WINDOW, the session compacts: it replaces the conversation with a summary and continues. Anything the summary leaves out is gone, and the plan the session was following is one of the things it can leave out. I measured 14 compactions on October 1, when the threshold was 200,000 tokens. Claude Code compacts a little before the threshold it is given, and these fired between 166,000 and 179,000 tokens. In addition, every session started with about 52,000 tokens of fixed instructions and tool descriptions. After a compaction the context restarted at a median of 67,000 tokens, which left about 100,000 tokens of working room, and busy sessions compacted every 13 to 57 minutes.
+
+Therefore, each project keeps a file called NOW.md of under 80 lines: the goal, the current state, the next three actions, and the open questions. A hook, a script Claude Code runs on events such as a session starting, loads NOW.md at the start of every session and again after every compaction, so the plan survives even when the summary drops it. The same day, I raised the threshold to 300,000 tokens to give each cycle more working room; I have not yet measured whether it helped.
+
+Compaction has one failure that NOW.md cannot fix. In a test with the threshold set to 50,000 tokens, a single tool output that refilled the context right after a compaction made the session compact again, and after three times in a row Claude Code stopped the run, reporting it as thrashing. So scripts now write bulk output to files and print a summary of ten lines or fewer. NOW.md holds only what a session wrote before compacting; anything it learned after its last rewrite is still lost.
