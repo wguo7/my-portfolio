@@ -1,0 +1,28 @@
+---
+title: "How often a small Shopify store's search bar buries its own products"
+publishedAt: "2026-10-21"
+summary: "I ran 3,412 buyer-style searches through the search bars of 342 small Shopify stores. In 36% of the stores, at least one product ranked below three results of the wrong kind."
+author: "Will Guo"
+tags: ["search", "evaluation", "ecommerce"]
+draft: false
+---
+
+Shopify's built-in search, which most small stores use as it comes, can rank a store's own product below items of the wrong kind. For example, on one solar store the search "200 watt solar panel" shows portable generators first, and the store's 200 W panel is not in the first ten results. I ran 3,412 short buyer-style searches through the search bars of 342 small US Shopify stores, using a script I wrote. In 6.4% of the searches, three language models from two companies all judged that none of the top three results was the right product. 123 of the 342 stores (36%) had at least one such miss.
+
+## The failure: the wrong size or the wrong kind first
+
+The misses I read are of two kinds. The search names a product and one spec, and the store shows either the same item in a different size or a different kind of item first. For example, "10l glass beaker" on a lab supply store shows 10 ml beakers first, and the store's 10-liter beaker is not in the first ten results. On a pool store, "above ground pool pump 1hp" shows 1.5 HP pumps first, and the 1 HP pump is not in the first ten. Each of these is a product the store sells that a buyer would not see in the first three results.
+
+## The method: model-written searches against the real search bar
+
+Measuring this needs searches a buyer might plausibly type, so I had a language model write one for each product. For each store I took up to ten products, from its best-selling list where the store exposes one. The model wrote a 2 to 5 word search per product, with the product name and at most one spec, and no brand name or model number. Each search went to `/search/suggest.json`, the public address that the store's search bar calls for its drop-down results (Shopify's predictive search). Those can differ from the full results page, so this measures the drop-down a shopper sees while typing. I recorded where the store's own product landed in the first ten results.
+
+A product outside the top three is not always a failure, because a close substitute can reasonably rank higher. Therefore two other language models (Claude Haiku and Claude Sonnet, given the same prompt) each decided, for every search where the product missed the top three, whether any top-three result was the right kind of product with the typed spec. Where both said no, a third model from a different company (OpenAI's GPT, same prompt) judged the search again. A search counts as a miss only when all three said no.
+
+I checked 391 stores in all. 48 replace Shopify's search with an add-on such as Searchanise or Boost Commerce, so I left them out, and 1 returned no product data. That leaves 342.
+
+## The numbers and what they do not show
+
+The 342 stores yielded 3,412 searches, 8 short of ten per store, where a store had fewer than ten products or the model skipped one. Across them, the store's product came first in 59% and made the top three in 74%. It was absent from the first ten results in 15%. Of the 871 searches where it missed the top three, both Claude judges called it a miss in 236 and both found an acceptable substitute in 564. They split on the other 71. GPT agreed with 219 of the 236, which gives the 6.4% figure. Counting a miss when either Claude judge says so gives 307 searches (9.0%), so the rate sits between 6.4% and 9.0% depending on how disagreements are counted. Agreement among models is still not a check on what a real buyer would accept.
+
+These numbers do not measure lost sales. The searches are plausible ones written by software, not logs of what real buyers typed, and buyers who search by part number are not covered. Why each miss happens was also not measured. One likely cause, still untested, is listing text that leads with model numbers and brand names instead of the words buyers use.
